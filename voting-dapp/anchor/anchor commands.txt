@@ -1,0 +1,15 @@
+anchor build
+anchor test
+anchor test --skip-local-validator --skip-deploy
+
+//Check details if local or not
+solana config get
+
+//To set to local
+solana config set -ul
+anchor deploy
+
+
+Program ID:
+CYM11WRQXteGaXRVHd5hd4vy1sk3YUUyWzzY6zzfAife
+

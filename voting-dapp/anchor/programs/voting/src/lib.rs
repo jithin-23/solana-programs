@@ -3,7 +3,7 @@
 
 use anchor_lang::prelude::*;
 
-declare_id!("FqzkXZdwYjurnUKetJCAvaUw5WAqbwzU6gZEwydeEfqS");
+declare_id!("CYM11WRQXteGaXRVHd5hd4vy1sk3YUUyWzzY6zzfAife");
 
 #[program]
 pub mod voting {
@@ -82,7 +82,7 @@ pub struct InitializeCandidate<'info> {
     #[account(
         init,
         payer = signer,
-        space = 32 + Candidate::INIT_SPACE,
+        space = 32 + Candidate::INIT_SPACE, //The course said +8 for discriminator d but i needed to give atleast 21 for it to work. Doen't know why
         seeds = [poll_id.to_le_bytes().as_ref(), candidate_name.as_bytes()],
         bump
     )]
@@ -107,7 +107,7 @@ pub struct InitializePoll<'info> {
     #[account(
         init,
         payer = signer,
-        space = 32 + Poll::INIT_SPACE,
+        space = Poll::INIT_SPACE + 22, //The course said +8 for discriminator d but i needed to give atleast 21 for it to work. Doen't know why
         seeds = [poll_id.to_le_bytes().as_ref()],
         bump
 

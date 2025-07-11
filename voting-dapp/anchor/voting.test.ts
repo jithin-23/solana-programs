@@ -7,17 +7,25 @@ import { Anchor } from 'lucide-react'
 
 const IDL = require('./target/idl/voting.json')
 
-const votingAddress = new PublicKey('FqzkXZdwYjurnUKetJCAvaUw5WAqbwzU6gZEwydeEfqS')
+const votingAddress = new PublicKey('CYM11WRQXteGaXRVHd5hd4vy1sk3YUUyWzzY6zzfAife')
 
 describe('Voting', () => {
   let context
   let provider
-  let votingProgram: Program<Voting>
+  // let votingProgram: Program<Voting>
+    anchor.setProvider(anchor.AnchorProvider.env());
+  let votingProgram = anchor.workspace.Voting as Program<Voting>;
 
   beforeAll(async () => {
-    context = await startAnchor('', [{ name: 'voting', programId: votingAddress }], [])
-    provider = new BankrunProvider(context)
-    votingProgram = new Program<Voting>(IDL, provider)
+    console.log('Loaded programs from anchor.workspace:')
+    console.log("AAA:", anchor.workspace.voting)
+
+    // anchor.setProvider(anchor.AnchorProvider.env())
+    // votingProgram = anchor.workspace.Voting as Program<Voting>
+
+    // context = await startAnchor('', [{ name: 'voting', programId: votingAddress }], [])
+    // provider = new BankrunProvider(context)
+    // votingProgram = new Program<Voting>(IDL, provider)
   })
 
   it('Initialize Poll', async () => {
