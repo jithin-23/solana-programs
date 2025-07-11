@@ -1,0 +1,3 @@
+anchor build
+anchor deploy --provider.cluster localnet
+anchor keys sync
