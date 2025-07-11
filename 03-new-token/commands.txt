@@ -1,0 +1,30 @@
+ solana config set -ud 
+ or
+ solana config set --url devnet
+ 
+ solana-keygen grind --starts-with jit:1
+ 
+ solana config set --keypair jitgabCEJMy37dfkGpY1fRPCiovsvNiUivKTiqwpazn.json
+ 
+ solana balance
+
+solana-keygen grind --starts-with tok:1
+
+Try to use decentralized storage like arweave or IRIS for json file of metadata
+
+spl-token metadata initialize \
+  <TOKEN_ADDRESS> \
+  --name "<TOKEN_NAME>" \
+  --symbol "<TOKEN_SYMBOL>" \
+  --uri "<URI>" \
+  [--mint-authority <KEYPAIR_PATH>]
+
+spl-token initialize-metadata tokJ3g2vETfe3HZ2mcd3yJF9szGNHD93H96GqbaKC3r 'Inam Token' 'INAM' 'https://jithin-23.github.io/nft-project/solana-spl-token/metadata.json'
+
+spl-token create-account tokJ3g2vETfe3HZ2mcd3yJF9szGNHD93H96GqbaKC3r
+
+token account created at 5tZndqwah3qaP3JRgKFSZkxKtedGR3emcLM29Tc7bfRe
+
+** the user jitgabCEJMy37dfkGpY1fRPCiovsvNiUivKTiqwpazn can mint token for his own token account or for other's token account if it exists since he is the current mint authority
+
+spl-token mint tokJ3g2vETfe3HZ2mcd3yJF9szGNHD93H96GqbaKC3r 1000
