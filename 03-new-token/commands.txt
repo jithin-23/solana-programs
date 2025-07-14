@@ -1,3 +1,5 @@
+https://www.solana-program.com/docs/token-2022/extensions
+ 
  solana config set -ud 
  or
  solana config set --url devnet
@@ -9,6 +11,8 @@
  solana balance
 
 solana-keygen grind --starts-with tok:1
+
+spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb --enable-metadata tokJ3g2vETfe3HZ2mcd3yJF9szGNHD93H96GqbaKC3r.json
 
 Try to use decentralized storage like arweave or IRIS for json file of metadata
 
@@ -22,6 +26,8 @@ spl-token metadata initialize \
 spl-token initialize-metadata tokJ3g2vETfe3HZ2mcd3yJF9szGNHD93H96GqbaKC3r 'Inam Token' 'INAM' 'https://jithin-23.github.io/nft-project/solana-spl-token/metadata.json'
 
 spl-token create-account tokJ3g2vETfe3HZ2mcd3yJF9szGNHD93H96GqbaKC3r
+
+spl-token display 5tZndqwah3qaP3JRgKFSZkxKtedGR3emcLM29Tc7bfRe
 
 token account created at 5tZndqwah3qaP3JRgKFSZkxKtedGR3emcLM29Tc7bfRe
 
