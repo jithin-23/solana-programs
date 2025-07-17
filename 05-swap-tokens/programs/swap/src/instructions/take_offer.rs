@@ -90,7 +90,7 @@ pub fn withdraw_and_close_vault(ctx: Context<TakeOffer>) -> Result<()> {
     let seeds = &[
         b"offer",
         ctx.accounts.user1.to_account_info().key.as_ref(),
-        &ctx.accounts.offer.id.to_be_bytes()[..],
+        &ctx.accounts.offer.id.to_le_bytes()[..],
         &[ctx.accounts.offer.bump],
     ];
 
