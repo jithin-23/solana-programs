@@ -1,0 +1,14 @@
+cargo add anchor-spl
+cargo add solana-program
+cargo add anchor-lang --features init-if-needed
+
+
+update cargo.toml
+idl-build = ["anchor-lang/idl-build","anchor-spl/idl-build"]
+
+npm install @solana/spl-token
+
+npm i anchor-bankrun
+//had to downgrade to     "@coral-xyz/anchor": "^0.30.0",
+
+npm i solana-bankrun
